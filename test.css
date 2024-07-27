@@ -1,0 +1,58 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    min-height: 99vh;
+    justify-content: center;
+    padding: 20px;
+}
+
+.drag-list{
+    background-color: white;
+    padding: 5px;
+    max-width: 460px;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.drag-list .item{
+    background-color: gray;
+    color: black;
+    display: flex;
+    padding: 5px 20px;
+    padding-left: 25px;
+    margin-bottom: 3px;
+    align-items: center;
+    justify-content: start;
+}
+
+.drag-list .item:last-child{
+    margin-bottom: 0px;
+}
+
+.drag-list .item .image{
+    height: 25px;
+    width: auto;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.drag-list .item .text, .drag-list .item .position{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.drag-list .item .bars{
+    font-size: 18px;
+    stroke: white;
+    stroke-width: 2;
+    cursor: pointer;
+    margin-left: auto;
+}
