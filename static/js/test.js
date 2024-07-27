@@ -1,25 +1,78 @@
 console.log("test.js")
 
-const dragArea = document.querySelector(".drag-list");
-let items = dragArea.querySelectorAll(".item");
-updateDragAreaEls()
+const logosDict = {
+    "Arsenal": "arsenal",
+    "AFC Bournemouth": "afc-bournemouth",
+    "Aston Villa": "aston-villa",
+    "Brentford": "brentford",
+    "Brighton & Hove Albion": "brighton",
+    "Chelsea": "chelsea",
+    "Crystal Palace": "crystal-palace",
+    "Everton": "everton",
+    "Fulham": "fulham",
+    "Ipswich Town": "ipswich",
+    "Leicester City": "leicester",
+    "Liverpool": "liverpool",
+    "Manchester City": "man-city",
+    "Manchester United": "man-utd",
+    "Newcastle United": "newcastle",
+    "Nottingham Forest": "nottingham",
+    "Southampton": "southampton",
+    "Tottenham Hotspur": "tottenham",
+    "West Ham United": "west-ham",
+    "Wolverhampton Wonderers": "wolves"
+}
 
-new Sortable(dragArea, {
+const dragList = document.querySelector(".drag-list"); 
+function generateListEls(list=null) {
+    if (!list) {
+        list =  ["Arsenal", "Aston Villa", "AFC Bournemouth", "Brentford", "Brighton & Hove Albion", 
+            "Chelsea", "Crystal Palace", "Everton", "Fulham", "Ipswich Town", "Leicester City", "Liverpool", 
+            "Manchester City", "Manchester United", "Newcastle United", "Nottingham Forest", "Southampton", 
+            "Tottenham Hotspur", "West Ham United", "Wolverhampton Wonderers"]
+    }
+
+    list.forEach((team, index) => {
+        const item = document.createElement("div");
+        item.className = "item";
+        item.setAttribute("value", team);
+
+        item.innerHTML = `
+        <span class="position">${index + 1}. </span>
+        <img class="image" src="/static/assets/logos/colour/${logosDict[team]}.png">
+        <span class="text">${team}</span>
+        <svg class="bars" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 18L20 18" stroke-linecap="round"/>
+            <path d="M4 12L20 12" stroke-linecap="round"/>
+            <path d="M4 6L20 6" stroke-linecap="round"/>
+        </svg>
+    `;
+
+        dragList.appendChild(item);
+    })
+
+    updateDragListEls()
+}
+
+generateListEls()
+
+
+new Sortable(dragList, {
     animation: 100, 
     onEnd: function (e) {
-        items = dragArea.querySelectorAll(".item")
+        items = dragList.querySelectorAll(".item")
 
         const itemsList = [];
         items.forEach(item => {
             itemsList.push(item.getAttribute("value"));
         })
         console.log(itemsList)
-        updateDragAreaEls()
+        updateDragListEls()
     }
 })
 
-function updateDragAreaEls() {
-    let items = dragArea.querySelectorAll(".item");
+function updateDragListEls() {
+    let items = dragList.querySelectorAll(".item");
     for (let i=0; i<items.length; i++) {
         let item = items[i]
         let backgroundColor = "grey";

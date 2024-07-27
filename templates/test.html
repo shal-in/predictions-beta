@@ -3,231 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Premier League Predictions | by Shali</title>
     <link rel="stylesheet" href="/static/css/test.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.2/Sortable.min.js" integrity="sha512-TelkP3PCMJv+viMWynjKcvLsQzx6dJHvIGhfqzFtZKgAjKM1YPqcwzzDEoTc/BHjf43PcPzTQOjuTr4YdE8lNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/favicons//apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/favicons//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/favicons//favicon-16x16.png">
+    <link rel="manifest" href="/static/assets/favicons/site.webmanifest">
+    <meta name="description" content="Predict Premier League match outcomes and compete with friends on Shalin's Premier League Predictor. Join the beta now!">
+    <meta name="author" content="Shalin Ahasan">
+    <meta name="keywords" content="Premier League, Predictor, Football, Soccer, Beta, Shalin Ahasan, Match Predictions, Football Predictions, EPL">
 </head>
+
 <body>
-    <div class="drag-list">
-        <div class="item" value="Arsenal">
-            <span class="position">1. </span>
-            <img class="image" src="/static/assets/logos/colour/arsenal.png">
-            <span class="text">Arsenal</span>
-            <svg class="bars" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 18L20 18" stroke-linecap="round"/>
-                <path d="M4 12L20 12" stroke-linecap="round"/>
-                <path d="M4 6L20 6" stroke-linecap="round"/>
-            </svg>
+    <div class="navigation-bar">
+        <h1 class="title">PREDICT THE LEAGUE TABLE
+        </h1>
+        <div class="button-container">
+            <button id="predictions">predictions</button>
+            <button id="leagues">leagues</button>
         </div>
-
-        <div class="item" value="Aston Villa">
-            <span class="position">2. </span>
-            <img class="image" src="/static/assets/logos/colour/aston-villa.png">
-            <span class="text">Aston Villa</span>
-            <svg class="bars" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 18L20 18" stroke-linecap="round"/>
-                <path d="M4 12L20 12" stroke-linecap="round"/>
-                <path d="M4 6L20 6" stroke-linecap="round"/>
-            </svg>
-        </div>
-
-        <div class="item" value="AFC Bournemouth">
-            <span class="position">3. </span>
-            <img class="image" src="/static/assets/logos/colour/afc-bournemouth.png">
-            <span class="text">AFC Bournemouth</span>
-            <svg class="bars" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 18L20 18" stroke-linecap="round"/>
-                <path d="M4 12L20 12" stroke-linecap="round"/>
-                <path d="M4 6L20 6" stroke-linecap="round"/>
-            </svg>
-        </div>
-
-        <div class="item" value="Brentford">
-            <span class="position">4. </span>
-            <img class="image" src="/static/assets/logos/colour/brentford.png">
-            <span class="text">Brentford</span>
-            <svg class="bars" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 18L20 18" stroke-linecap="round"/>
-                <path d="M4 12L20 12" stroke-linecap="round"/>
-                <path d="M4 6L20 6" stroke-linecap="round"/>
-            </svg>
-        </div>
-
-        <div class="item" value="Brighton & Hove Albion">
-            <span class="position">5. </span>
-            <img class="image" src="/static/assets/logos/colour/brighton.png">
-            <span class="text">Brighton & Hove Albion</span>
-            <svg class="bars" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 18L20 18" stroke-linecap="round"/>
-                <path d="M4 12L20 12" stroke-linecap="round"/>
-                <path d="M4 6L20 6" stroke-linecap="round"/>
-            </svg>
-        </div>
-
-        <div class="item" value="Chelsea">
-            <span class="position">6. </span>
-            <img class="image" src="/static/assets/logos/colour/chelsea.png">
-            <span class="text">Chelsea</span>
-            <svg class="bars" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 18L20 18" stroke-linecap="round"/>
-                <path d="M4 12L20 12" stroke-linecap="round"/>
-                <path d="M4 6L20 6" stroke-linecap="round"/>
-            </svg>
-        </div>
-
-        <div class="item" value="Crystal Palace">
-            <span class="position">7. </span>
-            <img class="image" src="/static/assets/logos/colour/crystal-palace.png">
-            <span class="text">Crystal Palace</span>
-            <svg class="bars" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 18L20 18" stroke-linecap="round"/>
-                <path d="M4 12L20 12" stroke-linecap="round"/>
-                <path d="M4 6L20 6" stroke-linecap="round"/>
-            </svg>
-        </div>
-
-        <div class="item" value="Everton">
-            <span class="position">8. </span>
-            <img class="image" src="/static/assets/logos/colour/everton.png">
-            <span class="text">Everton</span>
-            <svg class="bars" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 18L20 18" stroke-linecap="round"/>
-                <path d="M4 12L20 12" stroke-linecap="round"/>
-                <path d="M4 6L20 6" stroke-linecap="round"/>
-            </svg>
-        </div>
-
-        <div class="item" value="Fulham">
-            <span class="position">9. </span>
-            <img class="image" src="/static/assets/logos/colour/fulham.png">
-            <span class="text">Fulham</span>
-            <svg class="bars" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 18L20 18" stroke-linecap="round"/>
-                <path d="M4 12L20 12" stroke-linecap="round"/>
-                <path d="M4 6L20 6" stroke-linecap="round"/>
-            </svg>
-        </div>
-
-        <div class="item" value="Ipswich Town">
-            <span class="position">10. </span>
-            <img class="image" src="/static/assets/logos/colour/ipswich.png">
-            <span class="text">Ipswich Town</span>
-            <svg class="bars" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 18L20 18" stroke-linecap="round"/>
-                <path d="M4 12L20 12" stroke-linecap="round"/>
-                <path d="M4 6L20 6" stroke-linecap="round"/>
-            </svg>
-        </div>
-
-        <div class="item" value="Leicester City">
-            <span class="position">11. </span>
-            <img class="image" src="/static/assets/logos/colour/leicester.png">
-            <span class="text">Leicester City</span>
-            <svg class="bars" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 18L20 18" stroke-linecap="round"/>
-                <path d="M4 12L20 12" stroke-linecap="round"/>
-                <path d="M4 6L20 6" stroke-linecap="round"/>
-            </svg>
-        </div>
-
-        <div class="item" value="Liverpool">
-            <span class="position">12. </span>
-            <img class="image" src="/static/assets/logos/colour/liverpool.png">
-            <span class="text">Liverpool</span>
-            <svg class="bars" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 18L20 18" stroke-linecap="round"/>
-                <path d="M4 12L20 12" stroke-linecap="round"/>
-                <path d="M4 6L20 6" stroke-linecap="round"/>
-            </svg>
-        </div>
-
-        <div class="item" value="Manchester City">
-            <span class="position">13. </span>
-            <img class="image" src="/static/assets/logos/colour/man-city.png">
-            <span class="text">Manchester City</span>
-            <svg class="bars" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 18L20 18" stroke-linecap="round"/>
-                <path d="M4 12L20 12" stroke-linecap="round"/>
-                <path d="M4 6L20 6" stroke-linecap="round"/>
-            </svg>
-        </div>
-
-        <div class="item" value="Manchester United">
-            <span class="position">14. </span>
-            <img class="image" src="/static/assets/logos/colour/man-utd.png">
-            <span class="text">Manchester United</span>
-            <svg class="bars" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 18L20 18" stroke-linecap="round"/>
-                <path d="M4 12L20 12" stroke-linecap="round"/>
-                <path d="M4 6L20 6" stroke-linecap="round"/>
-            </svg>
-        </div>
-
-        <div class="item" value="Newcastle United">
-            <span class="position">15. </span>
-            <img class="image" src="/static/assets/logos/colour/newcastle.png">
-            <span class="text">Newcastle United</span>
-            <svg class="bars" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 18L20 18" stroke-linecap="round"/>
-                <path d="M4 12L20 12" stroke-linecap="round"/>
-                <path d="M4 6L20 6" stroke-linecap="round"/>
-            </svg>
-        </div>
-
-        <div class="item" value="Nottingham Forest">
-            <span class="position">16. </span>
-            <img class="image" src="/static/assets/logos/colour/nottingham.png">
-            <span class="text">Nottingham Forest</span>
-            <svg class="bars" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 18L20 18" stroke-linecap="round"/>
-                <path d="M4 12L20 12" stroke-linecap="round"/>
-                <path d="M4 6L20 6" stroke-linecap="round"/>
-            </svg>
-        </div>
-
-        <div class="item" value="Southampton">
-            <span class="position">17. </span>
-            <img class="image" src="/static/assets/logos/colour/southampton.png">
-            <span class="text">Southampton</span>
-            <svg class="bars" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 18L20 18" stroke-linecap="round"/>
-                <path d="M4 12L20 12" stroke-linecap="round"/>
-                <path d="M4 6L20 6" stroke-linecap="round"/>
-            </svg>
-        </div>
-
-        <div class="item" value="Tottenham Hotspur">
-            <span class="position">18. </span>
-            <img class="image" src="/static/assets/logos/colour/tottenham.png">
-            <span class="text">Tottenham Hotspur</span>
-            <svg class="bars" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 18L20 18" stroke-linecap="round"/>
-                <path d="M4 12L20 12" stroke-linecap="round"/>
-                <path d="M4 6L20 6" stroke-linecap="round"/>
-            </svg>
-        </div>
-
-        <div class="item" value="West Ham United">
-            <span class="position">19. </span>
-            <img class="image" src="/static/assets/logos/colour/west-ham.png">
-            <span class="text">West Ham United</span>
-            <svg class="bars" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 18L20 18" stroke-linecap="round"/>
-                <path d="M4 12L20 12" stroke-linecap="round"/>
-                <path d="M4 6L20 6" stroke-linecap="round"/>
-            </svg>
-        </div>
-
-        <div class="item" value="Wolverhampton Wonderers">
-            <span class="position">20. </span>
-            <img class="image" src="/static/assets/logos/colour/wolves.png">
-            <span class="text">Wolverhampton Wonderers</span>
-            <svg class="bars" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 18L20 18" stroke-linecap="round"/>
-                <path d="M4 12L20 12" stroke-linecap="round"/>
-                <path d="M4 6L20 6" stroke-linecap="round"/>
-            </svg>
-        </div>
+    </div>
+    
+    <div class="container">
+        <section class="predictions-section">
+            <h2 class="title">Predictions</h2>
+            <div class="drag-list"></div>
+    
+        </section>
+    
+        <section class="leagues-section">
+            <h1 class="title">Leagues</h1>
+            <div class="leagues-list"></div>
+        </section>
     </div>
     
     <script src="/static/js/test.js"></script>
