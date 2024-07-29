@@ -1,1 +1,5 @@
 text.txt
+OAUTH_SECRET.json
+server1.py
+flask_session/
+GOOGLE_APPLICATION_CREDENTIALS.json

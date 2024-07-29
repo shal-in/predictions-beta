@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    {% if session %}
+    <p><a href="/logout">Logout</a></p>
+    <div><pre>{{pretty}}</pre></div>
+    {% else %}
+    <p><a href="/login">Login with Google</a></p>
+    {% endif %}
+
+    <script src="/static/js/landing.js"></script>
+</body>
+</html>

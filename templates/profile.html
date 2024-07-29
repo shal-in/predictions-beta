@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let userSession = {{ session|tojson|safe }};
+    </script>
+    
+    <div class="row" id="row-0">
+        <img id="profile-image">
+        <input id="first-name"type="text" placeholder="first name" disabled>
+        <input id="family-name"type="text" placeholder="family name" disabled>
+        <button id="enable-name-inputs">b</button>
+    </div>
+
+    <div class="row" id="row-1">
+        <input type="checkbox" id="show-profile-image">
+        <p id="show-profile-image-text">Show image on profile</p>
+    </div>
+
+    <div class="row" id="row-2">
+        <input type="text" id="display-name" placeholder="display name">
+    </div>
+    
+    <div class="row" id="row-3">
+        <select id="club-select">
+            <option>Arsenal</option>
+            <option>Aston Villa</option>
+            <option>adasdas</option>
+            <option>adasdas</option>
+            <option>adasdas</option>
+        </select>
+
+
+        <div id="region">
+            <p id="region-text">Region: <span id="region-name"></span></p>
+        </div>
+    </div>
+    
+    <button id="create-profile">Create profile</button>
+
+    <p><a href="/logout">Logout</a></p>
+
+    <script src="/static/js/profile.js"></script>
+</body>
+</html>
