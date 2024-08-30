@@ -58,3 +58,15 @@ def add_profile_to_db(db, sub, profile_data):
 
 def get_current_time():
     return datetime.now()
+
+def get_profile_letter(letter):
+    num = 1
+
+    letter = letter.upper()
+
+    if letter not in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+        letter = "blank"
+
+    path = f'letters/{letter}{num}.png'
+
+    return path

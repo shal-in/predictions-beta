@@ -40,6 +40,10 @@ OAuth_client.register("OAuth_app",
                           "scope": "openid profile email"
                       })
 
+@app.route("/test")
+def test():
+    return render_template("index.html")
+
 @app.route("/")
 def landing():
     if "user" in session:
@@ -84,7 +88,6 @@ def google_callback():
                     return redirect("/profile")
                 else:
                     profile = helper.profile_exists(db, sub)
-                    print (profile)
 
     return redirect("/")
 
@@ -106,6 +109,15 @@ def proxy_image():
     url = request.args.get('url')
     response = requests.get(url)
     return send_file(BytesIO(response.content), mimetype='image/jpeg')
+
+@app.route("/api/get-profile-letter")
+def get_profile_letter():
+    letter = request.args.get("letter")
+
+    image_path = helper.get_profile_letter(letter)
+
+    return send_file(image_path, mimetype="image/jpeg")
+
 
 @app.route("/api/create-profile", methods=["POST"])
 def create_profile():

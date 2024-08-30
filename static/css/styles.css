@@ -1,0 +1,215 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+    --purple-1: #370D3D;
+    --white: #FFFFFF;
+    --pink: #E90152;
+
+}
+
+::selection{
+    background-color: var(--pink);
+}
+
+html{
+    font-size: 12px;
+}
+
+@media (max-width: 1400px){
+    html{
+        font-size: 16px;
+    } 
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+section{
+    min-height: 99.5vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.message{
+    width: 100%;
+    background-color: var(--purple-1);
+    position: absolute;
+    z-index: 10;
+    display: none;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.message .placeholder{
+    width: 20px;
+    height: 20px;
+    margin-right: auto;
+    margin-left: 1rem;
+}
+
+.message .text{
+    color: var(--white);
+    max-width: 1000px;
+    text-align: center;
+    line-height: 1.15rem;
+}
+
+.message .hide {
+    fill: var(--white);
+    width: 2rem;
+    height: auto;
+    margin-left: auto;
+    margin-right: 1rem;
+    transition: transform 0.2s ease-in-out;
+    background-color: var(--purple-1);
+    border: none;
+}
+
+.message .hide:hover{
+    transform: rotate(-45deg);
+    cursor: pointer;
+    fill: var(--pink);
+}
+
+.message .hide:focus{
+    transform: rotate(-45deg);
+    cursor: pointer;
+    fill: var(--pink);
+}
+
+.main-container{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-container .logo{
+    margin-top: auto;
+    height: auto;
+    width: 850px;
+    user-select: none;
+}
+
+.main-container .btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    background-color: var(--purple-1);
+    color: var(--white);
+    width: 1000px;
+    height: 87px;
+    font-size: 30px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+    margin-bottom: auto;
+    margin-top: 14rem;
+    border: none;
+}
+
+.main-container .btn:hover, .main-container .btn:focus{
+    cursor: pointer;
+    background-color: black;
+}
+
+.main-container .btn:focus{
+    cursor: pointer;
+    background-color: black;
+}
+
+@media (max-width: 1030px) {
+    .main-container .btn{
+        width: 800px;
+    }
+}
+
+@media (max-width: 840px) {
+    .main-container .logo{
+        width: 650px;
+        height: auto;
+    }
+
+    .main-container .btn{
+        width: 650px;
+    }
+}
+
+@media (max-width: 675px) {
+    .main-container .logo{
+        width: 450px;
+        height: auto;
+    }
+
+    .main-container .btn{
+        width: 450px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 475px) {
+    .main-container .logo{
+        width: 355px;
+        height: auto;
+        margin-bottom: auto;
+        margin-top: 8rem;
+    }
+
+    .main-container .btn{
+        width: 355px;
+        height: 50px;
+        margin-top: -8rem;
+    }
+}
+
+.main-container .btn .icon{
+    margin-right: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+#footer{
+    background-color: var(--purple-1);
+    width: 100%;
+    height: 3rem;
+}
+
+@media (hover:none) {
+    .message .hide {
+        fill: var(--white);
+        width: 2rem;
+        height: auto;
+        margin-left: auto;
+        margin-right: 1rem;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .main-container .btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        background-color: var(--purple-1);
+        color: var(--white);
+        font-size: 30px;
+        border-radius: 4px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+        margin-bottom: auto;
+    }
+}

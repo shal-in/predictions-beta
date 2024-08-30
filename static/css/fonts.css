@@ -1,0 +1,100 @@
+/* Define each font weight and style */
+@font-face {
+    font-family: 'RadikalTrial';
+    src: url('static/assets/fonts/RadikalTrial-UltraThin-BF642254c142e91.otf') format('opentype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RadikalTrial';
+    src: url('/static/assets/fonts/RadikalTrial-Thin-BF642254c169464.otf') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'RadikalTrial';
+    src: url('/static/assets/fonts/RadikalTrial-Light-BF642254c0602f1.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RadikalTrial';
+    src: url('/static/assets/fonts/RadikalTrial-Regular-BF642254c157251.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RadikalTrial';
+    src: url('/static/assets/fonts/RadikalTrial-Medium-BF642254c12fd7b.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RadikalTrial';
+    src: url('/static/assets/fonts/RadikalTrial-Bold-BF642254c05f85f.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RadikalTrial';
+    src: url('/static/assets/fonts/RadikalTrial-Black-BF642254c139184.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RadikalTrial';
+    src: url('/static/assets/fonts/RadikalTrial-ThinItalic-BF642254c19eb92.otf') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'RadikalTrial';
+    src: url('/static/assets/fonts/RadikalTrial-RegularItalic-BF642254c17ede3.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'RadikalTrial';
+    src: url('/static/assets/fonts/RadikalTrial-MediumItalic-BF642254c194938.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'RadikalTrial';
+    src: url('/static/assets/fonts/RadikalTrial-LightItalic-BF642254c191d1a.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'RadikalTrial';
+    src: url('/static/assets/fonts/RadikalTrial-BoldItalic-BF642254c180360.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'RadikalTrial';
+    src: url('/static/assets/fonts/RadikalTrial-BlackItalic-BF642254c14b435.otf') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+/* Apply the font to your elements */
+body {
+    font-family: 'RadikalTrial', sans-serif;
+}
+
+
