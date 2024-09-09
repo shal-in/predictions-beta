@@ -18,8 +18,8 @@ def get_secret(name, file_extension=".json"):
     return secret
 
 def get_country(ip_address):
-    ip_address = "22.96.191.125"
-    URL = f'http://ip-api.com/json/{ip_address}?fields=status,message,country,query'
+    ip_address = "86.21.54.23"
+    URL = f'http://ip-api.com/json/{ip_address}?fields=status,message,country,countryCode,query'
 
     response = requests.get(URL)
 
@@ -32,9 +32,11 @@ def get_country(ip_address):
         status = data.get('status')
         message = data.get('message')
         country = data.get('country')
+        country_code = data.get("countryCode")
+        region = data.get("region")
         query = data.get('query')
 
-        return country
+        return country_code
     
     return None
 

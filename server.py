@@ -57,7 +57,7 @@ def landing():
                     sub = session["user"]["profile"] = profile
                 else:
                     return redirect("/profile")
-    return render_template("landing.html", session=session.get("user"), pretty=json.dumps(session.get("user"), indent=4))
+    return render_template("index.html", session=session.get("user"), pretty=json.dumps(session.get("user"), indent=4))
 
 @app.route("/login")
 def google_login():
@@ -102,55 +102,17 @@ def profile():
         client_ip = request.headers.get('X-Forwarded-For', request.remote_addr)
         session["user"]["userinfo"]["region"] = helper.get_country(client_ip)
         return render_template("profile.html", session=session.get("user"))
-
-# APIs
-@app.route("/api/proxy-image")
-def proxy_image():
-    url = request.args.get('url')
-    response = requests.get(url)
-    return send_file(BytesIO(response.content), mimetype='image/jpeg')
-
-@app.route("/api/get-profile-letter")
-def get_profile_letter():
-    letter = request.args.get("letter")
-
-    image_path = helper.get_profile_letter(letter)
-
-    return send_file(image_path, mimetype="image/jpeg")
-
-
-@app.route("/api/create-profile", methods=["POST"])
-def create_profile():
-    # Retrieve JSON data from the request
-    data = request.get_json()
     
-    # Check if data was received
-    if not data:
-        return jsonify({"error": "No data received"}), 400
+# API endpoints
+@app.route("/API/letter")
+def letter():
+    name = request.args.get('name')
+    if name:
+        path = helper.get_profile_letter(name[0])
+    else:
+        path = helper.get_profile_letter(" ")
 
-
-    sub = session["user"]["userinfo"]["sub"]
-    email = session["user"]["userinfo"]["email"]
-    default_predictions = ["Arsenal", "Aston Villa", "AFC Bournemouth", "Brentford", "Brighton & Hove Albion", 
-            "Chelsea", "Crystal Palace", "Everton", "Fulham", "Ipswich Town", "Leicester City", "Liverpool", 
-            "Manchester City", "Manchester United", "Newcastle United", "Nottingham Forest", "Southampton", 
-            "Tottenham Hotspur", "West Ham United", "Wolverhampton Wonderers"]
-
-    profile_data = {
-        "given_name": data.get("given_name"),
-        "family_name": data.get("family_name"),
-        "display_name": data.get("display_name"),
-        "favourite_club": data.get("favourite_club"),
-        "region": data.get("region"),
-        "picture": data.get("picture"),
-        "sub": sub,
-        "predictions": default_predictions,
-        "email": email
-    }
-
-    helper.add_profile_to_db(db, sub, profile_data)
-
-    return jsonify({"message": "Profile created successfully"}), 200
+    return send_file(path, mimetype='image/png')
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=PORT)
